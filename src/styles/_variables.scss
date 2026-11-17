@@ -1,0 +1,26 @@
+// BRAND COLOURS
+$teal: #128482;
+$rust: #d0491e;
+$ivory: #fafafa;
+$midnight: #11292d;
+
+// TYPOGRAPHY
+$font-display: "Space Grotesk", sans-serif;
+$font-body: "Inter", sans-serif;
+$font-code: "JetBrains Mono", monospace;
+
+// FONT SIZE
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-md: 1.5rem;
+$text-lg: 2.4rem;
+
+// SPACING
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 2rem;
+
+// ELEMENT SIZES
+$header-height: 60px;
+$workspace-height: calc(100vh - #{$header-height});

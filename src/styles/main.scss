@@ -1,0 +1,90 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: url(../media/cursors/arrow.svg), auto;
+}
+
+.app {
+  @include transition(background-color);
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .workspace {
+    display: grid;
+    height: $workspace-height;
+    padding: $space-md;
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .divider-icon {
+        @include transition(color);
+      }
+      &:hover {
+        .divider-icon {
+          color: $rust;
+        }
+      }
+    }
+  }
+  .workspace.vertical {
+    grid-template-columns: 1fr 16px 1fr;
+  }
+  .workspace.horizontal {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 16px 1fr;
+  }
+}
+
+.app.dark {
+  background-image: url(../media/darkmode-background.png);
+  .workspace {
+    .divider {
+      color: $ivory;
+    }
+  }
+  .workspace.vertical {
+    .divider {
+      cursor:
+        url(../media/cursors/row-resize-dark.svg) 18 18,
+        row-resize;
+    }
+  }
+  .workspace.horizontal {
+    .divider {
+      cursor:
+        url(../media/cursors/col-resize-dark.svg) 18 18,
+        col-resize;
+    }
+  }
+}
+.app.light {
+  background-image: url(../media/lightmode-background.png);
+  .workspace {
+    .divider {
+      color: $midnight;
+    }
+  }
+  .workspace.vertical {
+    .divider {
+      cursor:
+        url(../media/cursors/row-resize-light.svg) 18 18,
+        row-resize;
+    }
+  }
+  .workspace.horizontal {
+    .divider {
+      cursor:
+        url(../media/cursors/col-resize-light.svg) 18 18,
+        col-resize;
+    }
+  }
+}
