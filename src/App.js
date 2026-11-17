@@ -21,9 +21,9 @@ const App = () => {
   const isDragging = useRef(false);
   const containerRef = useRef(null);
 
-  const { pathname } = useLocation();
+  const path = window.location.hash.replace(/^#\/?/, "");
 
-  const [, prefix, lesson] = pathname.split("/");
+  const [prefix, lesson] = path.split("/");
 
   const language = prefix === "py" ? "python" : "javascript";
 
